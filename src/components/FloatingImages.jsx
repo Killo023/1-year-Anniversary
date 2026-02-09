@@ -83,8 +83,8 @@ const FloatingImages = () => {
           ? 45 + (index % 5) * 10 // Mobile: 45-95px (smaller but more images)
           : 100 + (index % 6) * 25 // Desktop: 100-225px
         const opacity = isMobile
-          ? 0.15 + (index % 4) * 0.08 // Mobile: 0.15-0.47 (slightly more visible)
-          : 0.25 + (index % 4) * 0.12 // Desktop: 0.25-0.61
+          ? 0.35 + (index % 4) * 0.12 // Mobile: 0.35-0.71 (much more visible)
+          : 0.45 + (index % 4) * 0.15 // Desktop: 0.45-0.90 (much clearer)
 
         return (
           <motion.div
@@ -111,12 +111,12 @@ const FloatingImages = () => {
               alt={`Memory ${index + 1}`}
               className="w-full h-full object-cover rounded-lg"
               style={{
-                filter: isMobile ? 'blur(0.5px) brightness(1.05)' : 'blur(0.3px) brightness(1.1)',
-                mixBlendMode: 'multiply',
+                filter: 'brightness(1.15) contrast(1.1) saturate(1.1)',
+                mixBlendMode: 'normal',
               }}
               loading="lazy"
             />
-            <div className="absolute inset-0 rounded-lg border border-white/20 pointer-events-none" />
+            <div className="absolute inset-0 rounded-lg border border-white/30 pointer-events-none shadow-md" />
           </motion.div>
         )
       })}
