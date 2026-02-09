@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-white text-black overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .aurora-gradient {
+    background: linear-gradient(135deg, #fef3e2 0%, #fce7f3 25%, #fef3e2 50%, #fff9c4 75%, #fce7f3 100%);
+    background-size: 400% 400%;
+    animation: aurora 15s ease infinite;
+  }
+  
+  @keyframes aurora {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 20px rgba(225, 29, 72, 0.5),
+                 0 0 40px rgba(225, 29, 72, 0.3),
+                 0 0 60px rgba(225, 29, 72, 0.2);
+  }
+}
