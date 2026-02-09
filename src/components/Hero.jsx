@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden aurora-gradient flex items-center justify-center">
-      <div className="relative z-10 w-full px-6 md:px-12">
-        <div className="flex flex-col items-center justify-center space-y-6 md:space-y-10">
+      <div className="relative z-10 w-full px-4 sm:px-6 md:px-12 max-w-full">
+        <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-6 md:space-y-10 w-full">
           {/* Occasion text - One Year Anniversary & Valentine's Day */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -35,7 +35,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
           >
-            <h2 className="font-serif text-rose-600 text-[clamp(1.25rem,3vw,2.5rem)] font-light italic tracking-wide mix-blend-multiply">
+            <h2 className="font-serif text-rose-600 text-[clamp(1.125rem,2.5vw,2.5rem)] font-light italic tracking-wide mix-blend-multiply px-2 break-words">
               A Culinary Sanctuary In The City
             </h2>
           </motion.div>
@@ -53,8 +53,13 @@ const Hero = () => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-black text-[clamp(5rem,18vw,14rem)] leading-[0.85] tracking-tight text-black mix-blend-multiply text-center"
-            style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}
+            className="font-display font-black text-[clamp(3rem,12vw,14rem)] leading-[0.9] tracking-tight text-black mix-blend-multiply text-center px-2 sm:px-4 break-words"
+            style={{ 
+              fontFeatureSettings: '"liga" 1, "kern" 1',
+              wordBreak: 'break-word',
+              overflowWrap: 'break-word',
+              maxWidth: '100%'
+            }}
           >
             SATURDAY
           </motion.h1>

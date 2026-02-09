@@ -20,27 +20,36 @@ const FloatingImages = () => {
   // Generate random positions and animations for each image
   const getRandomPosition = (index) => {
     const positions = [
-      { top: '10%', left: '5%' },
-      { top: '15%', right: '8%' },
-      { top: '25%', left: '12%' },
-      { top: '30%', right: '15%' },
-      { top: '40%', left: '3%' },
-      { top: '45%', right: '10%' },
-      { top: '55%', left: '8%' },
-      { top: '60%', right: '5%' },
-      { top: '70%', left: '15%' },
-      { top: '75%', right: '12%' },
-      { top: '20%', left: '20%' },
-      { top: '35%', right: '25%' },
-      { top: '50%', left: '25%' },
-      { top: '65%', right: '20%' },
-      { top: '80%', left: '18%' },
-      { top: '12%', right: '30%' },
-      { top: '28%', left: '30%' },
-      { top: '42%', right: '35%' },
-      { top: '58%', left: '35%' },
-      { top: '72%', right: '28%' },
-      { top: '85%', left: '22%' },
+      { top: '8%', left: '3%' },
+      { top: '12%', right: '5%' },
+      { top: '18%', left: '8%' },
+      { top: '22%', right: '10%' },
+      { top: '28%', left: '2%' },
+      { top: '32%', right: '8%' },
+      { top: '38%', left: '6%' },
+      { top: '42%', right: '4%' },
+      { top: '48%', left: '10%' },
+      { top: '52%', right: '12%' },
+      { top: '58%', left: '5%' },
+      { top: '62%', right: '7%' },
+      { top: '68%', left: '12%' },
+      { top: '72%', right: '9%' },
+      { top: '78%', left: '4%' },
+      { top: '15%', left: '15%' },
+      { top: '25%', right: '18%' },
+      { top: '35%', left: '18%' },
+      { top: '45%', right: '20%' },
+      { top: '55%', left: '20%' },
+      { top: '65%', right: '15%' },
+      { top: '75%', left: '16%' },
+      { top: '10%', right: '25%' },
+      { top: '20%', left: '25%' },
+      { top: '30%', right: '28%' },
+      { top: '40%', left: '28%' },
+      { top: '50%', right: '25%' },
+      { top: '60%', left: '22%' },
+      { top: '70%', right: '22%' },
+      { top: '80%', left: '14%' },
     ]
     return positions[index % positions.length]
   }
@@ -64,17 +73,17 @@ const FloatingImages = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {images.map((image, index) => {
-        // Show fewer images on mobile (only first 6), all on desktop
-        if (isMobile && index > 5) return null
+        // Show more images on mobile (first 15), all on desktop
+        if (isMobile && index > 14) return null
         
         const position = getRandomPosition(index)
         const animation = getRandomAnimation(index)
         // Smaller sizes on mobile, larger on desktop
         const size = isMobile 
-          ? 50 + (index % 4) * 12 // Mobile: 50-98px
+          ? 45 + (index % 5) * 10 // Mobile: 45-95px (smaller but more images)
           : 100 + (index % 6) * 25 // Desktop: 100-225px
         const opacity = isMobile
-          ? 0.12 + (index % 3) * 0.06 // Mobile: 0.12-0.30 (more subtle)
+          ? 0.15 + (index % 4) * 0.08 // Mobile: 0.15-0.47 (slightly more visible)
           : 0.25 + (index % 4) * 0.12 // Desktop: 0.25-0.61
 
         return (
