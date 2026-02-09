@@ -12,9 +12,9 @@ const CTA = () => {
   })
 
   // Darken background as user scrolls into section
-  const backgroundOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.8, 0.95])
-  const textOpacity = useTransform(scrollYProgress, [0.3, 0.6], [0, 1])
-  const textScale = useTransform(scrollYProgress, [0.3, 0.6], [0.8, 1])
+  const backgroundOpacity = useTransform(scrollYProgress, [0, 0.3, 1], [0, 0.8, 0.95])
+  const textOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1])
+  const textScale = useTransform(scrollYProgress, [0, 0.4], [0.9, 1])
 
   const handleMouseMove = (e) => {
     setMousePosition({
@@ -27,7 +27,7 @@ const CTA = () => {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen h-screen w-full flex items-center justify-center overflow-hidden"
     >
       {/* Darkening background overlay */}
       <motion.div
@@ -41,20 +41,20 @@ const CTA = () => {
           opacity: textOpacity,
           scale: textScale
         }}
-        className="relative z-10 text-center px-6"
+        className="relative z-10 text-center px-4 sm:px-6 py-8 sm:py-0"
       >
         <motion.h2
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-200px" }}
-          transition={{ duration: 1 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white glow-text mb-12"
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8 }}
+          className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white glow-text mb-8 sm:mb-12 px-2"
         >
           Will you be my Valentine, Taryn?
         </motion.h2>
 
         {/* Magnetic buttons */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12">
           <MagneticButton
             text="Yes, absolutely!"
             variant="primary"

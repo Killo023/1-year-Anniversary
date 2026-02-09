@@ -12,7 +12,7 @@ const ItineraryCard = ({ time, title, subtitle, description, delay = 0 }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay }}
-      className="glass rounded-2xl p-8 md:p-10 mb-8 backdrop-blur-xl"
+      className="glass rounded-2xl p-6 sm:p-8 md:p-10 mb-6 sm:mb-8 backdrop-blur-xl"
     >
       <div className="flex flex-col md:flex-row md:items-start md:gap-8">
         <div className="md:w-32 flex-shrink-0 mb-4 md:mb-0">
@@ -21,15 +21,15 @@ const ItineraryCard = ({ time, title, subtitle, description, delay = 0 }) => {
           </span>
         </div>
         <div className="flex-1">
-          <h3 className="text-2xl md:text-3xl font-serif font-semibold text-black mb-1">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-black mb-1">
             {title}
           </h3>
           {subtitle && (
-            <p className="text-xl md:text-2xl font-serif text-rose-600 mb-3 italic">
+            <p className="text-lg sm:text-xl md:text-2xl font-serif text-rose-600 mb-2 sm:mb-3 italic">
               {subtitle}
             </p>
           )}
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
             {description}
           </p>
         </div>
@@ -61,14 +61,14 @@ const Itinerary = () => {
   ]
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-white relative z-10">
+    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 bg-white relative z-10">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-serif text-4xl md:text-5xl font-bold text-center mb-4 text-black"
+          className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4 text-black"
         >
           The Saturday Itinerary
         </motion.h2>
@@ -77,7 +77,7 @@ const Itinerary = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-serif text-xl md:text-2xl text-center mb-16 text-rose-600 italic"
+          className="font-serif text-lg sm:text-xl md:text-2xl text-center mb-8 sm:mb-12 md:mb-16 text-rose-600 italic px-4"
         >
           A day crafted especially for you, Taryn
         </motion.p>

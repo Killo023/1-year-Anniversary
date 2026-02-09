@@ -34,19 +34,19 @@ const TheWilds = () => {
   const pathData = "M 50 200 Q 150 100 250 150 T 450 200 Q 550 250 650 200 T 850 150 Q 950 100 1050 200"
 
   return (
-    <section ref={containerRef} className="py-32 px-6 md:px-12 bg-gradient-to-b from-white to-rose-50 relative overflow-hidden">
+    <section ref={containerRef} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-b from-white to-rose-50 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h2 className="font-serif text-5xl md:text-6xl font-bold text-black mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 sm:mb-6">
             The Wilds
           </h2>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed px-2">
             An immersive morning walk through the koppies. We'll hunt for the James Delaney sculptures, 
             cross the yellow bridge, and take in the 360-degree skyline views. A journey through nature 
             that connects us to the heart of Jozi and to each other.
@@ -54,7 +54,7 @@ const TheWilds = () => {
         </motion.div>
 
         {/* Decorative Map Path SVG */}
-        <div className="relative h-64 md:h-96 w-full my-20">
+        <div className="relative h-48 sm:h-64 md:h-96 w-full my-12 sm:my-16 md:my-20">
           <svg
             className="w-full h-full"
             viewBox="0 0 1100 400"
@@ -95,12 +95,12 @@ const TheWilds = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="glass rounded-2xl p-8 md:p-12 backdrop-blur-xl max-w-3xl mx-auto"
+          className="glass rounded-2xl p-6 sm:p-8 md:p-12 backdrop-blur-xl max-w-3xl mx-auto"
         >
-          <h3 className="font-serif text-3xl md:text-4xl font-semibold text-black mb-4">
+          <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-black mb-3 sm:mb-4">
             The Ascent
           </h3>
-          <p className="text-gray-700 text-lg leading-relaxed">
+          <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
             The Wilds Nature Reserve offers more than just a walk—it's an adventure through 
             the urban wilderness. As we explore the koppies together, we'll discover hidden 
             sculptures, traverse the iconic yellow bridge, and pause to take in breathtaking 

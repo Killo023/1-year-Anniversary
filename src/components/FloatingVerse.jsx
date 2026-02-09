@@ -16,10 +16,10 @@ const FloatingVerse = () => {
         y: y,
         opacity: opacity
       }}
-      className="fixed bottom-10 right-10 z-40 mix-blend-difference pointer-events-none"
+      className="hidden sm:block fixed bottom-10 right-10 z-40 mix-blend-difference pointer-events-none"
     >
-      <div className="glass rounded-lg p-6 backdrop-blur-md max-w-xs">
-        <p className="font-serif text-white text-sm md:text-base italic leading-relaxed text-right">
+      <div className="glass rounded-lg p-4 sm:p-6 backdrop-blur-md max-w-xs">
+        <p className="font-serif text-white text-xs sm:text-sm md:text-base italic leading-relaxed text-right">
           "Every good and perfect gift is from above, coming down from the Father of the heavenly lights."
         </p>
         <p className="font-display text-white/80 text-xs mt-2 text-right">

@@ -34,7 +34,7 @@ const AnniversaryMessage = () => {
   }
 
   return (
-    <section className="py-20 md:py-32 px-6 md:px-12 bg-gradient-to-b from-white via-rose-50/30 to-white relative z-10">
+    <section className="py-12 sm:py-20 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-b from-white via-rose-50/30 to-white relative z-10">
       <div className="max-w-5xl mx-auto">
         <motion.div
           ref={ref}
@@ -43,11 +43,11 @@ const AnniversaryMessage = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.p
-            className="font-serif text-[clamp(1.125rem,2.2vw,1.625rem)] leading-[2.4] tracking-wide text-gray-800 text-center"
+            className="font-serif text-[clamp(1rem,4vw,1.625rem)] leading-[1.8] sm:leading-[2.2] md:leading-[2.4] tracking-wide text-gray-800 text-center"
             style={{
               fontFamily: 'Playfair Display, serif',
-              letterSpacing: '0.03em',
-              wordSpacing: '0.1em',
+              letterSpacing: '0.02em',
+              wordSpacing: '0.08em',
             }}
           >
             {words.map((word, index) => (

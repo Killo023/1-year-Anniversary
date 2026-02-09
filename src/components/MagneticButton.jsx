@@ -83,7 +83,7 @@ const MagneticButton = ({ text, variant = 'primary', mousePosition }) => {
     handleMouseMove()
   }, [mousePosition, isHovered, x, y])
 
-  const baseStyles = "px-8 py-4 rounded-full font-display font-semibold text-lg transition-all duration-300 relative overflow-hidden"
+  const baseStyles = "px-6 sm:px-8 py-3 sm:py-4 rounded-full font-display font-semibold text-base sm:text-lg transition-all duration-300 relative overflow-hidden"
 
   const variantStyles = {
     primary: "bg-rose-600 text-white hover:bg-rose-700",

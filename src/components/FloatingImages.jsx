@@ -1,11 +1,21 @@
 import { motion } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 // Import all images using Vite's glob import
 const imageModules = import.meta.glob('../Images/*.jpeg', { eager: true })
 const images = Object.keys(imageModules).map(path => imageModules[path].default || path)
 
 const FloatingImages = () => {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   // Generate random positions and animations for each image
   const getRandomPosition = (index) => {
@@ -54,10 +64,18 @@ const FloatingImages = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {images.map((image, index) => {
+        // Show fewer images on mobile (only first 6), all on desktop
+        if (isMobile && index > 5) return null
+        
         const position = getRandomPosition(index)
         const animation = getRandomAnimation(index)
-        const size = 100 + (index % 6) * 25 // Varying sizes: 100-225px
-        const opacity = 0.25 + (index % 4) * 0.12 // Varying opacity: 0.25-0.61
+        // Smaller sizes on mobile, larger on desktop
+        const size = isMobile 
+          ? 50 + (index % 4) * 12 // Mobile: 50-98px
+          : 100 + (index % 6) * 25 // Desktop: 100-225px
+        const opacity = isMobile
+          ? 0.12 + (index % 3) * 0.06 // Mobile: 0.12-0.30 (more subtle)
+          : 0.25 + (index % 4) * 0.12 // Desktop: 0.25-0.61
 
         return (
           <motion.div
@@ -84,12 +102,11 @@ const FloatingImages = () => {
               alt={`Memory ${index + 1}`}
               className="w-full h-full object-cover rounded-lg"
               style={{
-                filter: 'blur(0.3px) brightness(1.1)',
+                filter: isMobile ? 'blur(0.5px) brightness(1.05)' : 'blur(0.3px) brightness(1.1)',
                 mixBlendMode: 'multiply',
               }}
               loading="lazy"
             />
-            {/* Decorative border */}
             <div className="absolute inset-0 rounded-lg border border-white/20 pointer-events-none" />
           </motion.div>
         )
