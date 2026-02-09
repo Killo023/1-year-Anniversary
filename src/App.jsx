@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import AnniversaryMessage from './components/AnniversaryMessage'
 import Itinerary from './components/Itinerary'
 import TheWilds from './components/TheWilds'
 import CTA from './components/CTA'
@@ -13,6 +14,7 @@ function App() {
       <FloatingImages />
       <Navbar />
       <Hero />
+      <AnniversaryMessage />
       <Itinerary />
       <TheWilds />
       <CTA />
